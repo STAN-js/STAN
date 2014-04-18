@@ -4,7 +4,18 @@ STAN - Shortest Template Engine
 This template engine is called STAN in a honor of Stan Marsh - "a normal, average, American, mixed-up kid", from South Park :)
 
 ![alt tag](http://upload.wikimedia.org/wikipedia/en/a/a7/StanMarsh.png)
-( image and a character itself are belong to South Park authors, I don't own it )
+( *image and a character itself are belong to South Park authors, I don't own it* )
+
+What will you gain
+----
+For less then 30 lines of code you will get:
+- First class support of JavaScript inside of templates
+- Ability to call any JS function or JS librery
+- DOM access while rendering template ( so you can add some crazyness to your templates )
+- Data escaping ( can be turned off )
+- Template grammar validation
+- Tracing ( throu console.log )
+- Debugging
 
 How to use
 ----
