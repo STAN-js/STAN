@@ -9,6 +9,7 @@ This template engine is called STAN in a honor of Stan Marsh - "a normal, averag
 What will you gain
 ----
 For less then 30 lines of code you will get:
+- Unlike other 'short' template engines - this one can be used in real project :)
 - First class support of JavaScript inside of templates
 - Ability to call any JS function or JS librery
 - DOM access while rendering template ( so you can add some crazyness to your templates )
@@ -16,6 +17,7 @@ For less then 30 lines of code you will get:
 - Template grammar validation
 - Tracing ( throu console.log )
 - Debugging
+- Template Partials ( call one template from another and pass any arguments )
 
 How to use
 ----
