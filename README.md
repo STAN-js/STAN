@@ -30,9 +30,13 @@ function _hello_world_template() {
     div.context.somevalue.div
 }
 ```
-Render it
+Compile template
 ```javascript
-document.body.innerHTML = STAN.run(STAN.compile(_hello_world_template), data);
+var compiledTemplate = STAN.compile(_hello_world_template);
+```
+Pass data and run it
+```javascript
+document.body.innerHTML = STAN.run(compiledTemplate, data);
 ```
 
 More advanced example
