@@ -1,0 +1,16 @@
+{
+  "name": "STAN",
+  "main": "stan.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/aiboy/STAN",
+  "description": "Shortest Template Engine",
+  "keywords": [
+    "stan",
+    "template",
+    "shortest"
+  ],
+  "authors": [
+    "aiboy"
+  ],
+  "license": "MIT"
+}
