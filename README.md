@@ -32,8 +32,46 @@ function _hello_world_template() {
 ```
 Render it
 ```javascript
-document.body.innerHTML = STAN.render(_hello_world_template, data);
+document.body.innerHTML = STAN.run(STAN.compile(_hello_world_template), data);
 ```
+
+More advanced example
+----
+
+```javascript
+//this is data
+var context = {
+  keys:[0,1,2,3,null],
+  key:"<b>test</b>"
+};
+ 
+//this is template
+function _template(){
+  for (var i=0; i < context.keys.length; i++) {
+    div.b;
+      if (context.keys[i] === 0) {
+        span.raw('zero').span;
+      } else {
+        partial(_item, context.keys[i]);
+      }
+      span.raw(", index: " + i).span;
+    div.e;
+  }
+  with (context){
+    div.key.div;
+  }
+}
+ 
+//this is also a template but it will be called as a sub template
+function _item(){
+  span['class="red"'].
+     context!==null?context:'null value'
+  .span;
+}
+
+document.body.innerHTML = STAN.run(STAN.compile(_hello_world_template), data);
+```
+
 
 BTW
 ----
