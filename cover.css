@@ -99,6 +99,7 @@ body {
   }
   .masthead-nav {
     float: right;
+    margin-right: 70px;
   }
 }
 
@@ -157,5 +158,9 @@ body {
   .mastfoot,
   .cover-container {
     width: 700px;
+  }
+  .masthead-nav {
+    float: right;
+    margin-right: 0px;
   }
 }
