@@ -14,9 +14,13 @@ For 30 lines of source code (no dependencies) you will get:
 
 How to use
 ----
+Install via bower
+```
+bower install STAN
+```
 Add script
 ```html
-<script type="text/javascript" src="stan.js"></script>
+<script src="bower_components/STAN/stan.js" type="text/javascript"></script>
 ```
 Prepare data
 ```javascript
