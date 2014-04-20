@@ -1,6 +1,6 @@
 STAN - Shortest Template Engine
 ----
-For 30 lines of code you will get:
+For 30 lines of source code you will get:
 - First class support of JavaScript inside of templates
 - Ability to call any JS function or JS librery
 - DOM access while rendering template ( so you can add some crazyness to your templates )
@@ -9,6 +9,7 @@ For 30 lines of code you will get:
 - Tracing ( throu console.log method )
 - Debugging ( throu debugger statement )
 - Template Partials ( call one template from another and pass any arguments )
+- Template Compilation ( for good speed )
 - Unlike other 'short' template engines - this one can be used in real project :)
 
 How to use

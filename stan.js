@@ -16,7 +16,7 @@ STAN = {
   		return result;
 	},
 	run: function(result, context, escape) {
-		var r = "", div = span = {}, raw = function(t){return t;}
+		var r = "", raw = function(t){return t;}
   		if (escape == null || escape == true) { 
     		context = JSON.parse(JSON.stringify(context)
         		.replace(/</g,'&lt;')
