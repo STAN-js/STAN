@@ -47,12 +47,14 @@ More advanced example
 ----
 
 ```javascript
+//noprotect //this line disable jsbin jsfiddle protection
+
 //this is data
-var context = {
-  keys:[0,1,2,3,null],
+var data = {
+  keys:[3,0,2,3,null],
   key:"<b>test</b>"
 };
- 
+
 //this is template
 function _template(){
   for (var i=0; i < context.keys.length; i++) {
@@ -69,7 +71,7 @@ function _template(){
     div.key.div;
   }
 }
- 
+
 //this is also a template but it will be called as a sub template
 function _item(){
   span['class="red"'].
@@ -77,7 +79,7 @@ function _item(){
   .span;
 }
 
-document.body.innerHTML = STAN.run(STAN.compile(_hello_world_template), data);
+document.body.innerHTML = STAN.run(STAN.compile(_template), data);
 ```
 
 
