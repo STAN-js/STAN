@@ -1,8 +1,7 @@
 STAN = {
     compile: function(_template_) {
         var ms, result = _template_.toString()
-            .replace(/function (\w+)\(\){/,'(function $1(){')
-            .replace(/\}$/, '})()')
+            .replace(/function\s+([\d\w_]+)\s*\(\s*\)\s*{([\S\s]+)}/,'(function $1(){$2})()')
             .replace(/(div|span)\.b/g, 'r+="<$1>";')
             .replace(/(div|span)\.e/g, 'r+="</$1>";')
             .replace(/(div|span)(?:\['([^.']+)'\])?\./g,"r+='<$1 $2>'+(")

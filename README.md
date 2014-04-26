@@ -18,29 +18,36 @@ Install via bower
 ```
 bower install STAN
 ```
-Add script
+Use it
 ```html
-<script src="bower_components/STAN/stan.js" type="text/javascript"></script>
-```
-Prepare data
-```javascript
-var data = {
-    somevalue: "Hello World"
-};
-```
-Write template right inside js file
-```javascript
-function _hello_world_template() {
-    div.context.somevalue.div
-}
-```
-Compile template
-```javascript
-var compiledTemplate = STAN.compile(_hello_world_template);
-```
-Pass data and run it
-```javascript
-document.body.innerHTML = STAN.run(compiledTemplate, data);
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Hello STAN</title>
+  <!-- add STAN refrence -->
+  <script src="bower_components/STAN/stan.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    //prepare some data
+    var data = {
+        somevalue: "Hello STAN"
+    };
+
+    //write template
+    function _hello_world_template() {
+        div.context.somevalue.div
+    }
+
+    window.onload = function(){
+      //compile
+      var compiledTemplate = STAN.compile(_hello_world_template);
+      //execute
+      document.body.innerHTML = STAN.run(compiledTemplate, data);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
 ```
 
 More advanced example
