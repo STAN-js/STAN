@@ -81,9 +81,7 @@ function _template(){
 
 //this is also a template but it will be called as a sub template
 function _item(){
-  span['class="red"'].
-     context!==null?context:'null value'
-  .span;
+  span['class="red"'].context!==null?context:'null value'.span;
 }
 
 document.body.innerHTML = STAN.run(STAN.compile(_template), data);
