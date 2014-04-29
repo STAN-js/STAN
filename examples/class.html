@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Simple Template</title>
+    <script type="text/javascript" src="../stan.js"></script>
+    <style type="text/css">
+        .c-red {
+            color: red;
+        }
+        .c-black {
+            color: black;
+        }
+    </style>
+    <script type="text/javascript">
+
+        var data = [
+            { name: 'STAN', color: 1 },
+            { name: 'Ai_boy', color: 2 },
+            { name: 'IceFrog' }
+        ];
+
+        function getClass(n){
+            if (n == 2) {
+                return 'c-red';
+            } else {
+                return 'c-black';
+            }
+        }
+
+        function _template(){
+            for (var i = 0; i < context.length; i++) {
+                partial(_item, context[i]);
+            }
+        }
+
+        function _item(){
+            div.raw('name').div;
+            div.class[getClass(context.color)].context.name.div;
+            hr;
+        }
+
+        var c = STAN.compile(_template);
+        console.log(c);
+        var r = STAN.run(c, data);
+
+        window.onload = function(){
+            document.body.innerHTML = r;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
