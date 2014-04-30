@@ -35,8 +35,12 @@
         }
 
         function _item(){
-            div.raw('name').div;
-            div.class[getClass(context.color)].context.name.div;
+            div['style="font-size:40px"'].raw('name').div;
+            if (context.color == 2) {
+                div['class="c-red"'].context.name.div;
+            } else {
+                div['class="c-black"'].context.name.div;
+            }
             hr;
         }
 
