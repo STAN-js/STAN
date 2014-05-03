@@ -10,6 +10,7 @@ For 30 lines of source code (no dependencies) you will get:
 - Debugging ( throu debugger statement )
 - Template Partials ( call one template from another and pass any arguments )
 - Template Compilation ( for good speed )
+- JSON output ( or any other format ) is possible via 'raw' method
 - Unlike other 'short' template engines - this one can be used in real project :)
 
 How to use
