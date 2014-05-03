@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Simple Template</title>
+    <script type="text/javascript" src="../stan.js"></script>
+    <script type="text/javascript">
+
+        var data = {
+            greet: 'Hello',
+            name: 'STAN'
+        };
+
+        function _template(){
+            h1.raw('content of context').h1;
+            pre.b;
+                raw(JSON.stringify(context));
+            pre.e;
+        }
+
+        var c = STAN.compile(_template);
+        var r = STAN.run(c, data);
+
+        window.onload = function(){
+            document.body.innerHTML = r;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
