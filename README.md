@@ -87,6 +87,24 @@ function _item(){
 document.body.innerHTML = STAN.run(STAN.compile(_template), data);
 ```
 
+CoffeeScript
+----
+```coffee
+data = [ "a", "b", "c" ]
+
+_template ->
+  for item in context
+    div.b
+    partial _item, item
+    div.e
+
+_item -> 
+  div.context.div
+  hr
+
+STAN.run (STAN.compile _template), data
+```
+
 
 BTW
 ----
