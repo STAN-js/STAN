@@ -15,7 +15,7 @@ STAN = {
         return result
     },
     run: function(result, context, escape) {
-        var r = "", raw = function(t){return t}
+        var r = "", raw = function(t){r+=t;return t}
         if (escape !== false) { 
             var div = document.createElement('div')
             div.appendChild(document.createTextNode(JSON.stringify(context)))
