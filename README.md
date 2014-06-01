@@ -106,6 +106,15 @@ _item ->
 STAN.run (STAN.compile _template), data
 ```
 
+But what about speed?
+----
+STAN have power of fullfledge template engine and speed of 'micro template' frameworks
+(but you have to get compiled template and save it into the file, it will be better in the future)
+
+http://jsperf.com/stan-speed-test
+
+![jsperf results](https://downloader.disk.yandex.ru/preview/1037aa831b7be7d904fcaed97e30debf/mpfs/quPX148IhDBpXzVK80z8s3dYgp3V58dGHTyJt5C07s9Cgfjw7OHLVRrTO7rFWEoksHJioK5bqmd5kAOem3og_g%3D%3D?uid=0&filename=stanspeedtestjsPerfpng&disposition=inline&hash=&limit=0&content_type=image%2Fpng&size=XXL&crop=0)
+
 
 BTW
 ----
