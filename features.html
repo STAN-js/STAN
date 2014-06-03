@@ -24,47 +24,51 @@
     </div>
     <div class="site-wrapper">
 
-      <div class="site-wrapper-inner">
+      <div class="site-wrapper-inner2">
 
         <div class="cover-container">
 
-          <div class="masthead clearfix">
+          <div class=" clearfix">
             <div class="inner">
               <h3 class="masthead-brand">STAN</h3>
               <ul class="nav masthead-nav" style="white-space:nowrap">
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./features.html">Features</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li class="active"><a href="./features.html">Features</a></li>
                 <li><a href="./sandbox.html">Sandbox</a></li>
               </ul>
             </div>
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">STAN - Shortest Template Engine.</h1>
-            <p class="lead">A full-fledged template engine that consist only of <b>30 lines</b> of code</p>
-            <div class="jumbotron" style="border-radius: 10px; color: #333; padding: 0px;">
-              <p style="margin-bottom: 4px;">Example of a template</p>
-              <div id="editor" style="width: 100%; height: 200px; text-align: left;">function _template(){
-  for (var i=0; i < context.keys.length; i++) {
-    div.b;
-      if (context.keys[i] === 0) {
-        span.raw('zero').span;
-      } else {
-        span.context.keys[i].span;
-      }
-      span.raw(", index: " + i).span;
-    div.e;  
-  }
-}</div>
-            <p style="padding-bottom: 5px">Sounds intresting? :)</p>
-            </div>
-            <p class="lead">
-              <a href="./features.html" class="btn btn-lg btn-default">Learn more</a>
+            <h1 class="cover-heading" style="margin:40px">For <b>30 lines</b> of code, you will get:</h1>
+            <style type="text/css">
+              .features {
+                font-size: 20px;
+                padding: 0;
+              }
+              .features li {
+                margin: 6px;
+              }
+            </style>
+            <ul class="features">
+            <li>First class support of JavaScript inside of templates</li>
+            <li>Ability to call any JS function or JS librery</li>
+            <li>DOM access while rendering template ( so you can add some crazyness to your templates )</li>
+            <li>Data escaping ( can be turned off )</li>
+            <li>Template grammar validation</li>
+            <li>Tracing ( throu console.log method )</li>
+            <li>Debugging ( throu debugger statement )</li>
+            <li>Template Partials ( call one template from another and pass any arguments )</li>
+            <li>Template Compilation ( for good speed )</li>
+            <li>JSON output ( or any other format ) is possible via 'raw' method</li>
+            <li>Unlike other 'short' template engines - this one can be used in real project :)</li>
+            </ul>
+            <p class="lead" style="margin-top: 40px">
               <a href="./sandbox.html" class="btn btn-lg btn-primary">Try now</a>
-            </p>
+            </p> 
           </div>
-
-          <div class="mastfoot">
+            
+          <div class="mastfoot" style="position: static">
             <div class="inner">
               <p>Template Engine made by <a href="https://twitter.com/Ai_boy">@Ai_boy</a>.</p>
             </div>
@@ -75,14 +79,6 @@
       </div>
 
     </div>
-
-    <script src="bower_components/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script>
-        var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/monokai");
-        editor.getSession().setMode("ace/mode/javascript");
-        editor.setReadOnly(true);
-    </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
