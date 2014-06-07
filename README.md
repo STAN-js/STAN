@@ -13,7 +13,7 @@ For 30 lines of source code (no dependencies) you will get:
 - JSON output ( or any other format ) is possible via 'raw' method
 - Unlike other 'short' template engines - this one can be used in real project :)
 
-How to use
+How to use (Browser)
 ----
 Install via bower
 ```
@@ -49,6 +49,31 @@ Use it
 <body>
 </body>
 </html>
+```
+
+How to use (Browser)
+----
+Install via npm
+```
+npm install stan
+```
+Use it
+```javascript
+var STAN = require('stan');
+
+//prepare some data
+var data = {
+    somevalue: "Hello STAN"
+};
+
+//write template
+function _hello_world_template() {
+    div.context.somevalue.div
+}
+//compile
+var compiledTemplate = STAN.compile(_hello_world_template);
+//execute
+var result = STAN.run(compiledTemplate, data);
 ```
 
 More advanced example
