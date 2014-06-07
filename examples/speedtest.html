@@ -32,7 +32,9 @@
 
       var c = STAN.compile(_template);
 
-      function compiled__template(){
+      function compiled__template(context,r){
+        r=r||"";
+      
         r+='<h1 '+('class="header"')+'>'+(context.header)+'</h1>';
         r+='<h2 '+('class="header"')+'>'+(context.header2)+'</h2>';
         r+='<h3 '+('class="header"')+'>'+(context.header3)+'</h3>';
@@ -44,7 +46,12 @@
             r+='<li '+('class="item"')+'>'+(context.list[i])+'</li>';
           };
           r+='</ul '+("")+'>';
-      } 
+            
+        return r
+      }
+
+      console.log(c);
+
 
       console.time('eval');
       for (var i = 0; i < 3000; i++) {
@@ -54,9 +61,10 @@
 
       console.time('compiled code');
       for (var i = 0; i < 3000; i++) {
-      	var r = с_template(data, "");
+      	var r = compiled__template(data);
       };
       console.timeEnd('compiled code');
+
 
 
       window.onload = function(){

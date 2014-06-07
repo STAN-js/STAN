@@ -1,7 +1,7 @@
-STAN = {
+var STAN = {
     compile: function(_template_) {
         var ms, result = _template_.toString()
-            .replace(/function\s+([\d\w_]+)\s*\(\s*\)\s*{([\S\s]+)}/,'function compiled_$1(){$2}')
+            .replace(/function\s+([\d\w_]+)\s*\(\s*\)\s*{([\S\s]+)}/,'function compiled_$1(context,r){\n\tr=r||"";\n$2\n\treturn r\n}')
             .replace(/(\w+)(?:\[(['"]?[^\]]*?['"]?)\])?\.(e|b)\s*[\n;}]/g, function(m,t,x,e){ 
                 return "r+='<" + (e=="b"?"":"/") + t + " '+(" + (x||'""') + ")+'>';" })
             .replace(/(\w+)(?:\[(['"]?[^\]]*?['"]?)\])?\.(.+)\.(\w+)\s*[\n;}]/g, function(m,s,x,b,e){
@@ -18,13 +18,13 @@ STAN = {
     run: function(result, context, escape) {
         var r = "", raw = function(t){r+=t;return t}
         if (escape !== false) { 
-            var div = document.createElement('div')
-            div.appendChild(document.createTextNode(JSON.stringify(context)))
-            context = JSON.parse(div.innerHTML)
+            context = JSON.parse(JSON.stringify(context)
+                .replace(/</g,'&lt;').replace(/&/g,'&amp;').replace(/>/g,'&gt;'))
         }
         function partial(fn, ctx) {
-            var oldCtx = context; context = ctx; fn(); context = oldCtx
+            var oldCtx = context; context = ctx; fn(ctx, ''); context = oldCtx
         }
-        return eval('(' + result + ')()'), r
+        return eval('(' + result.replace(/context,r/g,'') + ')()'),r
     }
 }
+try { exports.STAN = STAN; } catch (e){}

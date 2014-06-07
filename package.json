@@ -1,0 +1,26 @@
+{
+  "name": "STAN",
+  "version": "0.2.0",
+  "description": "STAN - Shortest Template Engine",
+  "main": "stan.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aiboy/STAN.git"
+  },
+  "keywords": [
+    "template",
+    "aiboy"
+  ],
+  "author": "Ai_boy ( aka Oleksii Okhrymenko )",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aiboy/STAN/issues"
+  },
+  "homepage": "http://aiboy.github.io/STAN/"
+}
