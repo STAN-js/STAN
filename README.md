@@ -51,7 +51,7 @@ Use it
 </html>
 ```
 
-How to use (Browser)
+How to use (Node.js)
 ----
 Install via npm
 ```
