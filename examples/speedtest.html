@@ -6,63 +6,62 @@
     <script type="text/javascript" src="../stan.js"></script>
     <script type="text/javascript">
 
-        var data = {
-		   header: "Header",
-		   header2: "Header2",
-		   header3: "Header3",
-		   header4: "Header4",
-		   header5: "Header5",
-		   header6: "Header6",
-		   list: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-		};
+      var data = {
+		    header: "Header",
+		    header2: "Header2",
+		    header3: "Header3",
+		    header4: "Header4",
+		    header5: "Header5",
+		    header6: "Header6",
+		    list: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+		  };
 
-        function _template(){
-        	h1['class="header"'].context.header.h1;
-        	h2['class="header"'].context.header2.h2;
-        	h3['class="header"'].context.header3.h3;
-        	h4['class="header"'].context.header4.h4;
-        	h5['class="header"'].context.header5.h5;
-        	h6['class="header"'].context.header6.h6;
-        	ul['class="list"'].b;
-          	for (var i = 0; i < context.list.length; i++) {
-          		li['class="item"'].context.list[i].li;
-          	};
-            ul.e;
-        }
+      function _template(){
+      	h1['class="header"'].context.header.h1;
+      	h2['class="header"'].context.header2.h2;
+      	h3['class="header"'].context.header3.h3;
+      	h4['class="header"'].context.header4.h4;
+      	h5['class="header"'].context.header5.h5;
+      	h6['class="header"'].context.header6.h6;
+      	ul['class="list"'].b;
+        	for (var i = 0; i < context.list.length; i++) {
+        		li['class="item"'].context.list[i].li;
+        	};
+          ul.e;
+      }
 
-        var c = STAN.compile(_template);
+      var c = STAN.compile(_template);
 
-       	function с_template(context, r){
-        	r+='<h1 class="header">'+(context.header)+'</h1>';
-        	r+='<h2 class="header">'+(context.header2)+'</h2>';
-        	r+='<h3 class="header">'+(context.header3)+'</h3>';
-        	r+='<h4 class="header">'+(context.header4)+'</h4>';
-        	r+='<h5 class="header">'+(context.header5)+'</h5>';
-        	r+='<h6 class="header">'+(context.header6)+'</h6>';
-        	r+='<ul class="list">';
-          	for (var i = 0; i < context.list.length; i++) {
-          		r+='<li class="item">'+(context.list[i])+'</li>';
-          	};
-            r+='</ul >';
-            return r;
-        }
+      function compiled__template(){
+        r+='<h1 '+('class="header"')+'>'+(context.header)+'</h1>';
+        r+='<h2 '+('class="header"')+'>'+(context.header2)+'</h2>';
+        r+='<h3 '+('class="header"')+'>'+(context.header3)+'</h3>';
+        r+='<h4 '+('class="header"')+'>'+(context.header4)+'</h4>';
+        r+='<h5 '+('class="header"')+'>'+(context.header5)+'</h5>';
+        r+='<h6 '+('class="header"')+'>'+(context.header6)+'</h6>';
+        r+='<ul '+('class="list"')+'>';
+          for (var i = 0; i < context.list.length; i++) {
+            r+='<li '+('class="item"')+'>'+(context.list[i])+'</li>';
+          };
+          r+='</ul '+("")+'>';
+      } 
 
-      	console.time('eval');
-      	for (var i = 0; i < 3000; i++) {
-        	var r = STAN.run(c, data, false);
-      	};
-        console.timeEnd('eval');
+      console.time('eval');
+      for (var i = 0; i < 3000; i++) {
+      	var r = STAN.run(c, data, false);
+      };
+      console.timeEnd('eval');
 
-        console.time('compiled code');
-      	for (var i = 0; i < 3000; i++) {
-        	var r = с_template(data, "");
-      	};
-        console.timeEnd('compiled code');
+      console.time('compiled code');
+      for (var i = 0; i < 3000; i++) {
+      	var r = с_template(data, "");
+      };
+      console.timeEnd('compiled code');
 
 
-        window.onload = function(){
-            document.body.innerHTML = r;
-        }
+      window.onload = function(){
+          document.body.innerHTML = r;
+      }
 
     </script>
 </head>
