@@ -59,7 +59,7 @@ npm install stan
 ```
 Use it
 ```javascript
-var STAN = require('stan');
+var STAN = require('stan').STAN;
 
 //prepare some data
 var data = {
